@@ -1,0 +1,80 @@
+##------------------ Tutoriel Linux ------------------##
+
+##Pourquoi choisir Linux ? 
+
++Développé à partir d’UNIX
++UNIX : Dennis Ritchie & Ken Thompson
++Multiutilisateur
++Utilisation des pipes, redirections entre différents outils
++Démarrage/Arrêt contrôlé par le fichier /etc/inittab et les scripts /etc/rc.d/init.d/…
+	-/etc/rc.d/init.d/... : les programmes démarrés après le boot
++Différentes versions de librairies possibles
++Modifications possible sans reboot
++Modifications des paramètres du kernel directement sur /proc
++Rôle du Kernel :
+	- multi-tasking
+	- multi-user
+	- multi-threading
+	- multi-processing
+	- security
+	- interfacing with hardware 
+	- interfacing with network
++Linux développé par Linus Torvalds
++OpenSource (code source libre)
++De plus plus utilisé dans les enterprises : HP, Oracel, IBM
++Compatibilité matérielle hétérogène (laptop, serveurs, mainframes, supercomputer, routeurs, satellites, etc.)
++Linux utilisé pour les recherches avancées dans les laboratoires de R&D informatiques
+
+
+
+
+##Comparaison des distributions
+
++Projet Fedora : 
+    - RHEL, Centos, Scientific Linux
+    - rpm
+    - Up2date
+    - Yum : téléchargement depuis les repositories
++Debian : 
+    - Ubuntu
+    - Apt-get distrib upgrade : téléchargement des derniers paquets depuis internet
+    
+    
+
+	
+##Commandes basiques
++pstree: 				arborescence des processus en cours
++top:					liste des processus en cours
+	-s					modification du délai  (toutes les X secondes)
+	-i					affihc uniquement les processus actifs
+	-k					arrêt du processus
+	-f					field management ( en tapant s : trié par le champ )
++mpstat:				statistiques concernant le processeur
++dstat:					statistiques concernant les ressources systèmes
++iostat: 				statistiques CPU et I/O
++vmstat: 				statistiques mémoires
++stat: 					statu d'un fichier ou d'un système de fichier (file system)
++nstat: 				les modules réseaux istallés
++ps aux: 				statu des processus
++uname -a: 				informations systèmes
++/proc/version: 		version du kernel
++/etc/redhat-release:	version de RedHat
++uptime:				runtime du système
++w: 					les utilisateurs connectés
++/sbin/lsmod: 			les modules kernel en cours (/proc/lsmod)
+
+
+##Pour identifier les processus
++pstree -p
++ps aux
++top
+
++nice: 					exécute une commande avec une priotité (-20 à 19) 
+						-20: priorité élevée / 19: priorité faible
++renice: 				modifie la priorité d'un processus en cours
+
++lsof: 					liste des fichiers ouverts ( et processus attachés aux ports ouverts)
++lsof -i TCP:port		liste des processus attachés aux ports										
++netstat -punta			ports ouverts
++ulimit					restriction des ressources
++nohup					exécute des commandes même après un logout
